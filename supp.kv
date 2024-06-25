@@ -1,0 +1,148 @@
+#:kivy 2.1.0
+<loading>:
+    name:'load'
+    FloatLayout:
+        size: root.width,root.height
+        id:container
+        Image:
+            id: bg
+            source:'background.jpg'
+            keep_ratio : False
+            size_hint: 1, 1
+            allow_stretch: True
+        Image:
+            id:logo
+            source:'smpn1pogalan.png'
+            keep_ratio: 0.3
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+        Label:
+            text: 'PERIODIC TABEL FOR STUDENT'
+            font_size: 60
+            size_hint:5,5
+            pos_hint: {'center_x':0.51, 'center_y':0.09}
+            color: 0,100/255,40/255,5
+
+        Label:
+            id:jd
+            text: 'PERIODIC TABEL FOR STUDENT'
+            font_size: 60
+            size_hint:5,5
+            pos_hint: {'center_x':0.5, 'center_y':0.1}
+            color: 0,230/255,100/255,5
+    FloatLayout:
+        TextInput:
+            id: akun
+            pos_hint: {'center_x':0.5,'center_y':0.3}
+            multiline:False
+            size_hint:0.35,0.045
+        Label:
+            text:'akun'
+            bold: True
+            pos_hint: {'center_x': 0.3, 'center_y': 0.3}
+            size_hint: 1,1
+            color:0,0,0,1
+        TextInput:
+            id: pw
+            pos_hint: {'center_x':0.5,'center_y':0.25}
+            multiline:False
+            size_hint:0.35,0.045
+        Label:
+            text:'password'
+            bold: True
+            pos_hint: {'center_x': 0.2888888, 'center_y': 0.25}
+            size_hint: 1,1
+            color:0,0,0,1
+        Button:
+            text:'submit'
+            id: submit
+            bold: True
+            size_hint:0.35,0.045
+            pos_hint: {'center_x':0.5,'center_y':0.2}
+            color: 0,0,1,1
+            background_color: 0,0,200/255,1
+            on_release: 
+                root.check_credentials(akun.text, pw.text)
+                
+                
+
+<DroppableArea>:
+    drag_classes: ['exam', ]
+    canvas.before:
+        Color:
+            rgba: self.line_color
+        Line:
+            width: 2
+            rectangle: [*self.pos, *self.size, ]
+        
+<DraggableLabel>:
+    drag_cls: 'exam'
+    drag_timeout: 0
+    font_size: 30
+    opacity: .4 if root.is_being_dragged else 1.
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Line:
+            dash_length: 4
+            dash_offset: 4
+            rectangle: [*self.pos, *self.size, ]
+    FloatLayout:
+        id:noun
+
+
+<core>:
+    name:'main sys'
+    FloatLayout:
+        Image:
+            id:logo
+            source:'smpn1pogalan.png'
+            keep_ratio: 0.3
+            pos_hint:{'center_x':0.5,'center_y':0.5}
+            opacity: 0.5
+        Label:
+            color: "#FF0000"
+            text: 'logam'
+            font_size:30
+            pos_hint:{'center_x':0.25,'center_y':0.8}
+        Label:
+            color: "#00FF00"
+            text: 'nonlogam'
+            font_size:30
+            pos_hint:{'center_x':0.25,'center_y':0.5}
+        Label:
+            color: "#0000FF"
+            text: 'metaloid'
+            font_size:30
+            pos_hint:{'center_x':0.25,'center_y':0.2}
+    BoxLayout:
+        id:container
+        orientation: 'horizontal'
+        spacing: 50
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            spacing: 20
+            DroppableArea:
+                line_color: "#FF0000"
+                color_cls: 'logam'
+            
+            DroppableArea:
+                line_color: "#00FF00"
+                color_cls: 'nonlogam'
+            
+            DroppableArea:
+                line_color: "#0000FF"
+                color_cls: 'metaloid'
+            
+        GridLayout:
+            id:where_the_items_initially_live
+            cols: 3
+            padding: 20
+            spacing: 20
+            ScrollView:
+                id:scroll
+                size_hint_x: 5
+                width: root.width * 0.6
+                do_scroll_Y: True
+                scroll_y: 1 
+

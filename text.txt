@@ -1,0 +1,56 @@
+Package                   Version
+------------------------- ----------
+altgraph                  0.17.4
+asyncgui                  0.6.0
+asynckivy                 0.6.0
+bottle                    0.12.25
+bottle-websocket          0.2.9
+certifi                   2023.11.17
+cffi                      1.16.0
+charset-normalizer        3.3.2
+docutils                  0.20.1
+Eel                       0.16.0
+exceptiongroup            1.2.0
+future                    0.18.3
+gevent                    23.9.1
+gevent-websocket          0.10.1
+greenlet                  3.0.2
+idna                      3.4
+Kivy                      2.2.1
+kivy-deps.angle           0.3.3
+kivy-deps.glew            0.3.1
+kivy-deps.sdl2            0.6.0
+Kivy-Garden               0.1.5
+kivy-garden-draggable     0.2.0
+kivymd                    0.104.2
+materialyoucolor          1.2.0
+packaging                 23.2
+pefile                    2023.2.7
+Pillow                    10.1.0
+pip                       24.0
+plyer                     2.1.0
+pycparser                 2.21
+pyenchant                 3.2.2
+pygame                    2.5.2
+Pygments                  2.17.1
+pyinstaller               6.3.0
+pyinstaller-hooks-contrib 2022.14
+pyjnius                   1.6.1
+pyparsing                 3.1.1
+pypiwin32                 223
+pywin32                   306
+pywin32-ctypes            0.2.2
+requests                  2.31.0
+setuptools                63.2.0
+urllib3                   2.1.0
+whichcraft                0.6.1
+zope.event                5.0
+zope.interface            6.1
+
+
+
+git clone https://github.com/kivy-garden/draggable.git
+cd draggable
+git checkout 0.1.1.dev0
+
+
