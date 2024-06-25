@@ -32,8 +32,8 @@ class DraggableLabel(KXDraggableBehavior, Factory.Label):
     def on_drag_fail(self, touch):
         ctx = self.drag_context
         if ctx.droppable is not None:
-            # if hasattr(self,'label'):
-                # self.parent.remove_widget(self.label)
+            if hasattr(self,'label'):
+                self.parent.remove_widget(self.label)
             self.label = Label(
                 text=f"Salah! {self.text} Tidak Bertipe {ctx.droppable.color_cls}",
                 bold=True,
